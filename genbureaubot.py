@@ -67,7 +67,7 @@ def handle_mob(call):
 def handle_return_to_language_selection(message):
     global user_state, data_dict
     data_dict[message.chat.id]['Phone'] = message.text
-    bot.send_message(message.chat.id, "Спасибо, ваша заявка на консультацию отправлена. В ближайшее время мы свяжемся с вами.")
+    bot.send_message(message.chat.id, "Спасибо, ваша заявка на консультацию отправлена. В ближайшее время мы свяжемся с вами.\n\nПодписывайтесь на наш телеграм-канал - @bestpassport")
     message_text = f"Новая запись на консультацию в агентство Егора Милюкова!\nДанные клиента:\nИмя: {data_dict[message.chat.id]['Name']}\nСпособ связи: {data_dict[message.chat.id]['Connection']}\nКонтактные данные: {data_dict[message.chat.id]['Phone']}"
     bot.send_message(admin_user_id, message_text)
     user_state[message.chat.id] = START
